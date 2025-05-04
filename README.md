@@ -10,7 +10,9 @@ ResumeFit is a comprehensive application that helps job seekers match their resu
 * Technical quiz assessment
 * Report saving and management
 * Interview question generation
-* User authentication
+* User authentication with email verification
+* MongoDB integration for storing analysis reports
+* Detailed match analysis with visual charts
 
 ## Project Structure
 
@@ -91,5 +93,14 @@ This will display a page showing whether the frontend can connect to the backend
 
 * React.js with Material-UI
 * Node.js with Express
+* Firebase (Authentication, Functions, Hosting)
 * MongoDB
-* OpenAI API for analysis 
+* OpenAI API
+
+## Contact
+
+For any questions or feedback, please contact the repository owner.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
