@@ -2,6 +2,20 @@
 
 ResumeFit is a comprehensive application that helps job seekers match their resumes with job descriptions, providing detailed feedback on skill matches, generating quiz questions, and offering insights to improve job compatibility.
 
+## Live Demo
+
+The application is fully deployed and available at:
+
+- **Frontend:** [https://se11-cf96b.web.app](https://se11-cf96b.web.app)
+- **Backend API:** `https://us-central1-se11-cf96b.cloudfunctions.net/api`
+
+### Testing the Connection
+
+You can verify the API connection by visiting:
+```
+https://se11-cf96b.web.app/test-connection
+```
+
 ## Features
 
 * Resume analysis against job descriptions
@@ -18,27 +32,28 @@ ResumeFit is a comprehensive application that helps job seekers match their resu
 
 The project consists of two main components:
 
-1. **Frontend**: Located in `frontend`
-2. **Backend API**: Located in `resume-matcher-api`
+1. **Frontend**: Located in `frontend` directory
+   - React.js with Material-UI
+   - Firebase authentication
+   - Connection to backend API
 
-## Setup and Running
+2. **Backend API**: Located in `resume-matcher-api` directory
+   - Express.js server
+   - MongoDB database integration
+   - OpenAI API integration
 
-### Option 1: Using the Run Script (macOS only)
+## Production Configuration
 
-The easiest way to run both applications in development mode is to use the provided shell script:
-
+This repository contains the production-ready code with configuration for the deployed application. The frontend is configured to use the Firebase Functions backend API at:
 ```
-./run-dev.sh
+https://us-central1-se11-cf96b.cloudfunctions.net/api
 ```
 
-This will:
-1. Create a default `.env` file for the backend if it doesn't exist
-2. Start the backend server on port 5005
-3. Start the frontend development server on port 3000
+## Local Development Setup
 
-### Option 2: Manual Setup
+For local development, follow these steps:
 
-#### Backend Setup
+### Backend Setup
 
 1. Navigate to the backend directory:
    ```
@@ -54,15 +69,17 @@ This will:
    ```
    MONGODB_URI=mongodb+srv://your_mongodb_username:your_mongodb_password@cluster0.mongodb.net/resumeFit?retryWrites=true&w=majority
    PORT=5005
+   OPENAI_API_KEY=your_openai_api_key
    ```
-   Replace the MongoDB URI with your actual MongoDB connection string.
+   Replace the MongoDB URI and OpenAI API key with your actual credentials.
 
 4. Start the backend server:
    ```
    npm start
    ```
+   The server will run at http://localhost:5005
 
-#### Frontend Setup
+### Frontend Setup
 
 1. Navigate to the frontend directory:
    ```
@@ -74,33 +91,47 @@ This will:
    npm install
    ```
 
-3. Start the frontend development server:
+3. Create a `.env` file with required environment variables.
+   For local development, you might want to override the API URL to point to your local backend:
+   ```
+   REACT_APP_API_URL=http://localhost:5005/api
+   ```
+
+4. Start the frontend development server:
    ```
    npm start
    ```
+   The app will run at http://localhost:3000
 
-## Testing the Connection
+### Testing Local Backend Connection
 
-After starting both the backend and frontend servers, you can test the connection by navigating to:
-
+While running locally, you can test the connection to your backend by navigating to:
 ```
 http://localhost:3000/test-connection
 ```
 
-This will display a page showing whether the frontend can connect to the backend API.
+## Deployment
 
-## Technologies Used
+The application is already deployed using:
+- Firebase Hosting for the frontend
+- Firebase Functions for the backend API
+- MongoDB Atlas for the database
 
-* React.js with Material-UI
-* Node.js with Express
-* Firebase (Authentication, Functions, Hosting)
-* MongoDB
-* OpenAI API
+## Security Note
 
-## Contact
+This repository is configured for production use. When using for development:
+- Do not commit sensitive API keys or credentials to the repository
+- Use environment variables for all sensitive information
+- Ensure proper authentication and authorization are in place
 
-For any questions or feedback, please contact the repository owner.
+## Browser Compatibility
 
-## License
+The application has been tested and works with:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Support and Issues
+
+For any issues or questions, please contact the repository owner or create an issue in the GitHub repository.
