@@ -8,19 +8,13 @@ The application is fully deployed and available at:
 
 - **Frontend:** [https://se11-cf96b.web.app](https://se11-cf96b.web.app)
 - **Backend API:** `https://us-central1-se11-cf96b.cloudfunctions.net/api`
-
-### Testing the Connection
-
-You can verify the API connection by visiting:
-```
-https://se11-cf96b.web.app/test-connection
-```
-
+- 
 ## Features
 
 * Resume analysis against job descriptions
 * Skills matching and gap analysis
 * Learning roadmap generation
+* Practice Quiz based on Job Description
 * Technical quiz assessment
 * Report saving and management
 * Interview question generation
@@ -103,12 +97,6 @@ For local development, follow these steps:
    ```
    The app will run at http://localhost:3000
 
-### Testing Local Backend Connection
-
-While running locally, you can test the connection to your backend by navigating to:
-```
-http://localhost:3000/test-connection
-```
 
 ## Deployment
 
